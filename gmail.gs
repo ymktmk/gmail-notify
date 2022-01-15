@@ -20,6 +20,7 @@ function getGmail(myMessages) {
         var strDate = myMessages[i][j].getDate();
         var strmsg = Utilities.formatDate(strDate, 'Asia/Tokyo', 'yyyy-MM-dd HH:mm:ss')+"\n";
         strmsg += myMessages[i][j].getSubject() + "\n";
+        // 全文表示するなら.slice(0,200)を省く
         strmsg += myMessages[i][j].getPlainBody().slice(0,200);
         sendLineMessage(strmsg);
     }
